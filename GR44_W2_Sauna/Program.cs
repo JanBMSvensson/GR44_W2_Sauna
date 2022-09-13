@@ -1,4 +1,5 @@
 ﻿
+OutputEncoding = Encoding.UTF8;
 
 Sauna sauna = new(21.7);
 bool ShowInFahrenheit = true;
@@ -23,9 +24,9 @@ do
     
     string tempString;
     if (ShowInFahrenheit)
-        tempString = $"{CelsiusToFahrenheit(temperatureCelsius):F1} F  ";
+        tempString = $"{CelsiusToFahrenheit(temperatureCelsius):F1} \u02DAF  ";
     else
-        tempString = $"{temperatureCelsius:F1} C  ";
+        tempString = $"{temperatureCelsius:F1} \u02DAC  ";
 
     WriteAtPosition(9, stateLabelCol, temperatureCelsius < 73.0 ? "too cold     " : temperatureCelsius > 77.0 ? "too hot     " : "ready to use");
     WriteAtPosition(10, temperatureLabelCol, tempString);
