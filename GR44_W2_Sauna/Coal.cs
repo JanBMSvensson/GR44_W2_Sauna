@@ -1,7 +1,7 @@
 ﻿
 namespace GR44_W2_Sauna
 {
-    internal class Cole
+    internal class Coal
     {
         double MaxCelciusPerStep = 0.1;
         int BurnTimeInSteps = 100;

@@ -8,13 +8,13 @@ WriteLine();
 WriteLine();
 WriteLine("SAUNA MENU");
 WriteLine();
-WriteLine("SPACE - Add a cole brick");
+WriteLine("SPACE - Add a coal brick");
 WriteLine("C/F - Toggle Celsius/Fahrenheit");
 WriteLine("ESC - Shut down");
 
 int stateLabelCol = WriteAtPosition(9, 0, "Sauna state: ");
 int temperatureLabelCol = WriteAtPosition(10, 0, "Sauna Temperature: ");
-int coleLabelCol = WriteAtPosition(11, 0, "Cole bricks burning: ");
+int coleLabelCol = WriteAtPosition(11, 0, "Coal bricks burning: ");
 
 bool keepRunning = true;
 do

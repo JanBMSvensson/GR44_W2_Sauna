@@ -6,31 +6,31 @@ namespace GR44_W2_Sauna
 
         double Temperature;
         SaunaEnvironment Outside;
-        List<Cole> BagOfColeBurning;
+        List<Coal> BagOfBurningCoal;
 
         public Sauna(double outsideCelsiusTemp)
         {
             Outside = new(outsideCelsiusTemp);
             Temperature = outsideCelsiusTemp;
-            BagOfColeBurning = new();
+            BagOfBurningCoal = new();
         }
 
-        public int LevelOfCole { get { return BagOfColeBurning.Count; } }
+        public int LevelOfCole { get { return BagOfBurningCoal.Count; } }
 
         public void AddCole(int count = 1)
         {
             for (int i = 0; i < count; i++)
-                BagOfColeBurning.Add(new Cole());
+                BagOfBurningCoal.Add(new Coal());
         }
 
         public double CalculateTemperature()
         {
-            for(int i = BagOfColeBurning.Count -1; i >= 0; i--)
+            for(int i = BagOfBurningCoal.Count -1; i >= 0; i--)
             {
-                Temperature += BagOfColeBurning[i].CurrentHeatAddition; // Add cole-generated heat
+                Temperature += BagOfBurningCoal[i].CurrentHeatAddition; // Add cole-generated heat
 
-                if (BagOfColeBurning[i].BurnenUp)
-                    BagOfColeBurning.Remove(BagOfColeBurning[i]);
+                if (BagOfBurningCoal[i].BurnenUp)
+                    BagOfBurningCoal.Remove(BagOfBurningCoal[i]);
             }
 
             Temperature += Outside.GetHeatAddition(Temperature); // Add environment-generated heat (should only be negative)
